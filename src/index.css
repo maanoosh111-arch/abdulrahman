@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-navy: #0D447A;
+    --brand-navy-dark: #082D52;
+    --brand-amber: #E89125;
+    --brand-bg: #F4F6F9;
+  }
+
+  body {
+    font-family: 'Cairo', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #F4F6F9;
+    color: #0F2537;
+    overflow-x: hidden;
+  }
+
+  /* Luxury Arabic Font for all big letters, hero titles, headings, and prestige numbers */
+  h1, h2, h3, h4, h5, .font-luxury, .font-display, .font-luxury-arabic, .luxury-arabic-title {
+    font-family: 'El Messiri', 'Aref Ruqaa', 'Amiri', serif !important;
+    letter-spacing: -0.015em;
+  }
+
+  .font-luxury-alt {
+    font-family: 'Aref Ruqaa', 'El Messiri', 'Amiri', serif !important;
+  }
+
+  .font-kufi {
+    font-family: 'Reem Kufi', 'El Messiri', sans-serif !important;
+  }
+
+  .font-mono-tabular {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom subtle scrollbars for horizontal category bar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Print-specific rules: Hide everything except the selected single order receipt */
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  #printable-order-receipt,
+  #printable-order-receipt * {
+    visibility: visible !important;
+  }
+
+  #printable-order-receipt {
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 80mm !important;
+    margin: 0 auto !important;
+    padding: 12px !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+}

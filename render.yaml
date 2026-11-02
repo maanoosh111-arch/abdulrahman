@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: abdulrahman-cnc
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CHEF_ACCESS_PIN
+        value: "1234"
+      - key: GOOGLE_SHEET_ID
+        value: "1YE4in7SBDTqpSRGgA3hLPBl28oiepByUE-Gtm4OR62c"
